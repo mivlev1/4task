@@ -124,18 +124,6 @@
             </select>
             <br />
 
-            <label>Биография:</label>
-            <br />
-            <div class="w-100">
-                    <textarea name="biography" <?php if (!empty($bioErr)) {
-                        echo 'class="placeholder col-12 bg-danger text-light is-invalid"';
-                    } ?>><?php
-                        if (isset($_COOKIE['bio'])) {
-                            echo $_COOKIE['bio'];
-                        } ?>
-                                            </textarea>
-            </div>
-
             <?php
             if (!empty($bioErr)) {
                 echo '<span class="text-danger">' . $bioErr . '</span>';

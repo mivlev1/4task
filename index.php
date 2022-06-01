@@ -59,19 +59,18 @@ try{
         setcookie('bio',$bio,time()+365*24*60*60);
         setcookie('konech',$konech,time()+365*24*60*60);
 
-
         if (!$errors) {
             $sup= implode(",",$_GET['superpower']);
             $chebox = $_GET['chick'];
 
-            $conn = new PDO("mysql:host=localhost;dbname=u41810", 'u41810', '3516685', array(PDO::ATTR_PERSISTENT => true));
+            $conn = new PDO("mysql:host=localhost;dbname=u41731", 'u41731', '7439940', array(PDO::ATTR_PERSISTENT => true));
 
-            $user = $conn->prepare("INSERT INTO form SET id = ?,name = ?, email = ?, data = ?, gender = ?, konech = ?, bio = ?, chebox = ?");
+            $user = $conn->prepare("INSERT INTO application SET id = ?,name = ?, email = ?, data = ?, gender = ?, konech = ?, chebox = ?");
 
             $id_user = $conn->lastInsertId();
-            $user -> execute([$id_user, $_GET['field-name'], $_GET['field-email'], date('Y-m-d', strtotime($_GET['field-date'])), $_GET['radio-gender'], $_GET['radio-konech'], $_GET['biography'], $_GET['chick']]);
+            $user -> execute([$id_user, $_GET['field-name'], $_GET['field-email'], date('Y-m-d', strtotime($_GET['field-date'])), $_GET['radio-gender'], $_GET['radio-konech'], $_GET['chick']]);
 
-            $user1 = $conn->prepare("INSERT INTO super SET id = ?, super_name = ?");
+            $user1 = $conn->prepare("INSERT INTO power SET id = ?, super_name = ?");
             $user1 -> execute([$id_user, $sup]);
             $result = true;
         }
