@@ -7,10 +7,9 @@
     padding-left: 10px;
     padding-right: 10px;
     --borderWidth: 2px;
-    background-color: white;
+    background: #1D1F20;
     position: relative;
     border-radius: var(--borderWidth);
-    box-shadow: 0 0 5px 2px black;
 }
 .block_form:after {
     content: '';
@@ -61,4 +60,15 @@ html{
     box-sizing: border-box;
     background-color: #f8f8f8;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+@keyframes animatedgradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
 }
