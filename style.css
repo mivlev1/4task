@@ -6,11 +6,10 @@
     padding-left: 10px;
     padding-right: 10px;
     --borderWidth: 2px;
-    background: #1D1F20;
+    background-color: whitesmoke;
     position: relative;
-    border-radius: var(--borderWidth);
 }
-.block_form:after {
+/*.block_form:after {
     content: '';
     position: absolute;
     top: calc(-1 * var(--borderWidth));
@@ -18,13 +17,13 @@
     height: calc(100% + var(--borderWidth) * 2);
     width: calc(100% + var(--borderWidth) * 2);
     background-size: 300% 300%;
-}
+}*/
 .top_bot{
     padding-top: 10px;
     padding-bottom: 50px;
 }
 body{
-    background-color: whitesmoke;
+    background-color: var(--bs-body-bg);
     height: 100%;
     flex-direction: column;
     display: flex;
