@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=UTF-8');
 
-$nameErr = $emailErr = $bioErr = $chickErr="";
+$nameErr = $emailErr = $chickErr="";
 
 $result;
 
@@ -13,7 +13,7 @@ try{
         $data = $_GET['field-date'];
         $gender = $_GET['radio-gender'];
         $konech = $_GET['radio-konech'];
-        $bio = $_GET['biography'];
+        $chebox = $_GET['chick'];
         $sup = implode(",",$_GET['superpower']);
         if (empty($name)) {
             $nameErr = "Введите имя";
@@ -40,13 +40,7 @@ try{
                 //setcookie('email',$email,time()+365*24*60*60);
             }
 
-        if (empty($bio)) {
-            $bioErr = "Введите биографию";
-            $errors = TRUE;
-        }
-        else{
-            //setcookie('bio',$bio,time()+365*24*60*60);
-        }
+
         if (empty($_GET['chick'])) {
             $chickErr = "Чтобы продолжить, нужно согласиться с условиями";
             $errors = TRUE;
@@ -56,12 +50,11 @@ try{
         setcookie('name',$name,time()+365*24*60*60);
         setcookie('data',$data,time()+365*24*60*60);
         setcookie('gender',$gender,time()+365*24*60*60);
-        setcookie('bio',$bio,time()+365*24*60*60);
         setcookie('konech',$konech,time()+365*24*60*60);
 
         if (!$errors) {
-            $sup= implode(",",$_GET['superpower']);
-            $chebox = $_GET['chick'];
+
+
 
             $conn = new PDO("mysql:host=localhost;dbname=u41731", 'u41731', '7439940', array(PDO::ATTR_PERSISTENT => true));
 

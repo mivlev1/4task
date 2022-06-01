@@ -53,7 +53,7 @@
             if (isset($_COOKIE['data'])) {
                 echo 'value="' . $_COOKIE['data'] . '"';
             } else {
-                echo 'value="2002-08-06"';
+                echo 'value="2000-01-01"';
             }
             ?> type="date" required />
 
@@ -77,20 +77,6 @@
 
             <label>Кол-во конечностей:</label>
             <br />
-            <div class="custom-control custom-radio form-check-inline">
-                <input type="radio" id="konechRadio0" name="radio-konech" value=0 class="custom-control-input" <?php
-                if (isset($_COOKIE['konech']) == 0) {
-                    echo 'checked';
-                } ?> />
-                <label class="custom-control-label" for="konechRadio0">0</label>
-            </div>
-            <div class="custom-control custom-radio form-check-inline">
-                <input type="radio" id="konechRadio1" name="radio-konech" value=1 class="custom-control-input" <?php
-                if (isset($_COOKIE['konech']) == 1) {
-                    echo 'checked';
-                } ?> />
-                <label class="custom-control-label" for="konechRadio1">1</label>
-            </div>
             <div class="custom-control custom-radio form-check-inline">
                 <input type="radio" id="konechRadio2" name="radio-konech" value=2 class="custom-control-input" <?php
                 if (isset($_COOKIE['konech']) == 2) {
@@ -119,15 +105,13 @@
             <br />
             <select multiple="true" name="superpower[]" required>
                 <option value="Бессмертие">Бессмертие</option>
-                <option value="Прохождение сквозь стены">Прохождение сквозь стены</option>
+                <option value="Скорость">Скорость</option>
                 <option value="Левитация">Левитация</option>
             </select>
             <br />
 
             <?php
-            if (!empty($bioErr)) {
-                echo '<span class="text-danger">' . $bioErr . '</span>';
-            }
+
             ?>
             <br />
 
@@ -139,7 +123,7 @@
                 } ?>" name="chick" id="customCheck1" checked=checked value=1 <?php if (!empty($chickErr)) {
                     echo 'class="text-danger"';
                 } ?>>
-                <label class="custom-control-label" for="customCheck1">Ознакомлен с контрактом</label>
+                <label class="custom-control-label" for="customCheck1">С условиями согласен</label>
             </div>
 
             <?php
