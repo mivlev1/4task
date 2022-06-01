@@ -8,6 +8,7 @@
     --borderWidth: 2px;
     background-color: whitesmoke;
     position: relative;
+    box-shadow: 0 0 5px 2px black;
 }
 /*.block_form:after {
     content: '';
